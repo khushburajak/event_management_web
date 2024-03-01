@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin_dashboard.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/order_list.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+
+<div class="grid-container">
+
+    <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+            <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="main-title">
+            <h2>User List</h2>
+        </div>
+
+    </header>
+
+    <aside id="sidebar">
+
+        <div class="sidebar-title">
+            <img th:src="@{/images/man.png}" height="40px" width="40px" alt="">
+            <h4 class="profile-text" th:text="${info.getName()}"></h4>
+            <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+
+        <ul class="sidebar-list">
+            <li class="sidebar-list-item">
+                <a th:href="@{/admin/order-list}">Order List</a>
+            </li>
+            <li class="sidebar-list-item">
+                <a th:href="@{/admin/user-list}">User List</a>
+            </li>
+            <li class="sidebar-list-item">
+                <a th:href="@{/admin/add-books}">Add Books</a>
+            </li>
+            <li class="sidebar-list-item">
+                <a th:href="@{/admin/books-list}">Books List</a>
+            </li>
+            <li class="sidebar-list-item">
+                <a th:href="@{/admin/queries}">Query Section</a>
+            </li>
+            <li class="sidebar-list-item">
+                <a th:href="@{/admin/settings}">Settings</a>
+            </li>
+            <li class="sidebar-list-item">
+                <a th:href="@{/logout}">Logout</a>
+            </li>
+        </ul>
+    </aside>
+
+    <!--Main-->
+    <main class="main-container">
+        <div class="order-table">
+            <form>
+                <table class="content-table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Number</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Name of User</td>
+                        <td>Email of User</td>
+                        <td>Address of User</td>
+                        <td>Number of User</td>
+                        <td><button type="submit">Delete</button></td>
+                    </tr>
+                    <tr th:each="list:${userlist}">
+                        <td th:text="${list.name}">Name of User</td>
+                        <td th:text="${list.email}">Email of User</td>
+                        <td th:text="${list.address}">Address of User</td>
+                        <td th:text="${list.number}">Number of User</td>
+                        <td><a class="delete_button" th:href="@{~/admin/deleteUser/}+${list.id}">Delete</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+<script type="text/javascript" th:src="@{/javascript/admin_dashboard.js}"></script>
+</body>
+</html>

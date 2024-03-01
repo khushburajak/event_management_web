@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Query List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin_dashboard.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/order_list.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"/>
+</head>
+<body>
+
+<div class="grid-container">
+
+    <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+            <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="main-title">
+            <h2>Query List</h2>
+        </div>
+
+    </header>
+
+    <aside id="sidebar">
+
+        <div class="sidebar-title">
+            <img th:src="@{/images/man.png}" height="40px" width="40px" alt="">
+            <h4 class="profile-text" th:text="${info.getName()}"></h4>
+            <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+
+        <ul class="sidebar-list">
+            <li class="sidebar-list-item">
+                <a th:href="@{/admin/order-list}">Order List</a>
+            </li>
+            <li class="sidebar-list-item">
+                <a th:href="@{/admin/user-list}">User List</a>
+            </li>
+            <li class="sidebar-list-item">
+                <a th:href="@{/admin/add-books}">Add Books</a>
+            </li>
+            <li class="sidebar-list-item">
+                <a th:href="@{/admin/books-list}">Books List</a>
+            </li>
+            <li class="sidebar-list-item">
+                <a th:href="@{/admin/queries}">Query Section</a>
+            </li>
+            <li class="sidebar-list-item">
+                <a th:href="@{/admin/settings}">Settings</a>
+            </li>
+            <li class="sidebar-list-item">
+                <a th:href="@{/logout}">Logout</a>
+            </li>
+        </ul>
+    </aside>
+
+    <!--Main-->
+    <main class="main-container">
+        <div class="order-table">
+            <form>
+                <table class="content-table" id="table_id">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Name of person</td>
+                        <td>Email of the person</td>
+                        <td>Subject of query</td>
+                        <td>Message in description</td>
+                    </tr>
+                    <tr th:each="query:${queries}">
+                        <td th:text="${query.name}">Name of person</td>
+                        <td th:text="${query.email}">Email of the person</td>
+                        <td th:text="${query.subject}">Subject of query</td>
+                        <td th:text="${query.message}">Message in description</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <script
+                        type="text/javascript"
+                        charset="utf8"
+                        src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"
+                ></script>
+                <script
+                        type="text/javascript"
+                        charset="utf8"
+                        src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
+                    document.getElementsByClassName()
+                </script>
+                <script>
+                    $(function() {
+                        $("#table_id").dataTable();
+                    });
+                </script>
+
+                <br><br>
+            </form>
+        </div>
+    </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+<script type="text/javascript" th:src="@{/javascript/admin_dashboard.js}"></script>
+</body>
+</html>

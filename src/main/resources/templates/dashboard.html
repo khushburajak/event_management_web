@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/dashboard.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Add any additional stylesheets or scripts here -->
+</head>
+<body>
+    <header th:replace="~{/fragments/header.html}"></header>
+    <main>
+        <section class="dashboard-section">
+            <div class="dashboard-top-section">
+                <div class="dashboard-left-container">
+                    <div class="dashboard-title-text">
+                        <h1 class="h1-one">Discover Your Events</h1>
+                        <p class="p-one">Explore the Best Offers for Your Events.</p>
+                    </div>
+                </div>
+                <div class="dashboard-right-container">
+                    <img class="dashboard-body-img" th:src="@{/images/events.png}" alt="events Image">
+                </div>
+            </div>
+            <h2 class="dashboard-title">Explore All Events Here</h2>
+            <div id="products-section" class="dashboard-products-section">
+                <div class="dashboard-item" th:each="events : ${events}">
+                    <img class="dashboard-item-pic" th:src="'data:image/png;base64,' + ${events.imageBase64}" alt="events Image">
+                    <p class="dashboard-item-name" th:text="${events.name}"></p>
+                    <div class="dashboard-item-info">
+                        <p class="dashboard-item-price" th:text="'Rs ' + ${events.price}"></p>
+                        <form class="dashboard-item-form" th:method="post" th:action="@{/dashboard/save}" th:object="${events}">
+                            <input type="text" hidden="hidden" name="events_id" th:value="${events.id}">
+                            <input type="number" hidden="hidden" name="user_id" th:value="${info.id}">
+                            <button class="dashboard-item-button" type="submit">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer th:replace="~{/fragments/footer.html}"></footer>
+</body>
+</html>
