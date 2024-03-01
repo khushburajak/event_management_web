@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #00001F;
+    font-family: 'Poppins', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* main */
+main {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    justify-content: center;
+    align-items: center;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    border: 2px solid grey;
+    box-shadow: 5px 5px 5px grey;
+}
+.main-title {
+    font-size: 35px;
+    color: grey;
+    text-decoration: underline;
+}
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+    margin-top: 15px;
+}
+.main-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-img {
+    width: 150px;
+    height: 150px;
+}
+.profile {
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.fields {
+    display: flex;
+    flex-direction: column;
+    max-width: 385px;
+    margin-top: 15px;
+}
+.labels {
+    color: grey;
+}
+.inputs {
+    display: flex;
+    height: 42px;
+    width: 380px;
+    border-radius: 12px;
+    font-size: 15px;
+    padding-left: 10px;
+}
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 45px;
+    width: 300px;
+    margin-top: 10px;
+}
+.button-a, .button-b, .button-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 35px;
+    background-color: #65CAD1;
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    border-radius: 12px;
+}
+.button-a:hover {
+    background-color: green;
+    color: white;
+}
+.button-b:hover {
+    color: white;
+}
+.button-c:hover {
+    background-color: red;
+    color: white;
+}
+.for-profile-picbutton {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 400px;
+}
+@media (max-width: 645px) {
+    .main-container {
+        width: 100%;
+    }
+    .main-form {
+        width: 100%;
+    }
+}
+@media (max-width:388px) {
+    .inputfile {
+        width: 100px;
+    }
+    .for-profile-picbutton {
+        justify-content: center;
+        width: 50%;
+    }
+    .profile-section {
+        flex-direction: column;
+        width: 100%;
+    }
+    .inputs {
+        width: 320px;
+    }
+}

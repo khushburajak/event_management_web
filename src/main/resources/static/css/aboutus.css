@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif;
+    background-color: #00001F;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* main */
+main {
+    display: flex;
+}
+.main-div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 1000px;
+    margin-left: 100px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.h2-title {
+    color: grey;
+    text-decoration: underline;
+}
+.paragraph {
+    color: grey;
+    margin-top: 10px;
+}

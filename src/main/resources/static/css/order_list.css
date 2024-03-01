@@ -1,0 +1,68 @@
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.order-table {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+}
+.content-table {
+    border-collapse: collapse;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: #344041;
+}
+.content-table thead tr {
+    background-color: #65CAD1;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+.content-table tr {
+    width: 10px;
+}
+.content-table th {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dddddd;
+    color: black;
+}
+.content-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dddddd;
+}
+
+button {
+    font-size: 15px;
+    width: 90px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: rgb(237, 79, 51);
+}
+.edit-button {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+.delete_button {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+.edit-button:hover {
+    color: #65CAD1;
+}
+.delete_button:hover {
+    color: #65CAD1;
+}
+fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-right: 5px;
+    border-style: none;
+}
