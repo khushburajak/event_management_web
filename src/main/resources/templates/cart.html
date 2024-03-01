@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cart</title>
+  <link rel="stylesheet" th:href="@{/css/header.css}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+  <link rel="stylesheet" th:href="@{/css/cart.css}">
+</head>
+<body>
+  <header th:replace="~{/fragments/header.html}"></header>
+  <main>
+    <div class="order-table">
+      <form>
+        <table class="content-table">
+          <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Product Quantity</th>
+            <th>product Price</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="cartProduct:${cartItems}">
+            <td th:text="${cartProduct.getBooks().name}">Name of User</td>
+            <td th:text="${cartProduct.getBooks().quantity}">Email of User</td>
+            <td th:text="${cartProduct.getBooks().price}">Address of User</td>
+            <td><a class="delete_button" th:href="@{~/cart/remove/}+${cartProduct.id}">Delete</a></td>
+          </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </main>
+  <footer th:replace="~{/fragments/footer.html}"></footer>
+</body>
+</html>

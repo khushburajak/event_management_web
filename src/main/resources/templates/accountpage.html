@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/accountpage.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header th:replace="~{/fragments/header.html}"></header>
+<main>
+  <h1 class="main-title">Account Settings</h1>
+  <div class="main-container">
+    <form class="main-form" th:method="post" th:action="@{/user/updateUser}" th:object="${update}">
+      <div class="profile-section">
+        <div class="for-profile-picbutton">
+          <img class="profile-img" src="profile">
+          <input class="inputfile" type="file" name="pic" accept="image/*">
+        </div>
+        <h4>Name</h4>
+      </div>
+      <div class="fields">
+        <input class="inputs" type="hidden" name="id" hidden="hidden" th:value="${info.id}">
+        <label class="labels" for="name">Full Name</label>
+        <input class="inputs" type="text" name="name" placeholder="Full Name..." th:value="${info.getName()}">
+        <label class="labels" for="email">Email address</label>
+        <input class="inputs"  type="email" name="email" placeholder="Email address..." th:value="${info.getEmail()}">
+        <label class="labels" for="number">Mobile Number</label>
+        <input class="inputs"  type="number" name="number" placeholder="Mobile Number..." th:value="${info.getNumber()}">
+        <label class="labels" for="Address">Address</label>
+        <input class="inputs"  type="text" name="address" placeholder="Address..." th:value="${info.getAddress()}">
+        <label class="labels" for="password">Password</label>
+        <input class="inputs"  type="password" name="password" placeholder="New password...">
+      </div>
+      <div class="buttons">
+        <button class="button-a" type="submit">Update</button>
+        <input class="button-b" type="reset" value="reset">
+        <a class="button-c" th:href="@{/logout}">logout</a>
+      </div>
+    </form>
+  </div>
+</main>
+<footer th:replace="~{/fragments/footer.html}"></footer>
+</body>
+</html>
