@@ -1,0 +1,36 @@
+<header>
+    <div class="topsection">
+        <div class="headerleftsection">
+            <a th:href="@{/dashboard}" class="logo">
+                <img class="logo-img" th:src="@{/images/logo.svg}" width="138" height="28" alt="tintin">
+            </a>
+        </div>
+        <form class="headermiddlesection">
+            <input type="search" name="search" placeholder="Search here" class="search-box">
+            <button class="search-btn">Search</button>
+        </form>
+        <div class="headerrightsection">
+            <a th:href="@{/cart}" class="cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            <a th:href="@{/user/profile}" class="profile">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+    </div>
+    <div class="navigation">
+        <nav>
+            <ul class="header-ul">
+                <li class="header-li">
+                    <a class="header-a" th:href="@{/dashboard}">Home</a>
+                </li>
+                <li class="header-li">
+                    <a class="header-a" th:href="@{/dashboard#products-section}">Books</a>
+                </li>
+                <li class="header-li">
+                    <a class="header-a" th:href="@{/dashboard/aboutus}">About us</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
