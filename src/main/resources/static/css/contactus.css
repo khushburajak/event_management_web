@@ -3,21 +3,26 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     flex-wrap: wrap;
     font-family: 'Poppins', sans-serif;
-    background-color: #00001F;
+    background-color: #ffffff; /* Set background color to white */
+    color: #000000; /* Set text color to black */
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 /* main */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.contact-us{
+
+.contact-us {
     border-radius: 10px;
     min-height: 1px;
     padding-left: 15px;
@@ -25,17 +30,19 @@ main {
     margin-left: 10%;
     margin-right: 10%;
 }
-.main-contact{
+
+.main-contact {
     text-align: left;
     margin-left: 10%;
     margin-right: 20%;
     margin-bottom: 10px;
 }
-.main-contact h2{
+
+.main-contact h2 {
     font-size: 40px;
     font-weight: 600;
     text-decoration: underline;
-    color: grey;
+    color: #000000; /* Set heading color to black */
     margin-bottom: 5px;
 }
 
@@ -51,20 +58,16 @@ main {
     padding: 40px 30px;
 }
 
-
 .contact-in:nth-child(1) {
     flex: 30%;
     background: rgb(95 99 104);
 }
 
 .contact-in:nth-child(2) {
-    /*flex: 15%;*/
-    /* background: url(../images/1.jpg); */
     background-color: #292D33;
-    color: white;
+    color: #ffffff; /* Set text color to white */
     font-weight: bold;
 }
-
 
 .contact-in:nth-child(3) {
     flex: 30%;
@@ -73,7 +76,7 @@ main {
 
 .contact-in h1 {
     font-size: 24px;
-    color: black;
+    color: #000000; /* Set heading color to black */
     text-transform: uppercase;
     font-weight: 500;
     margin-bottom: 20px;
@@ -83,28 +86,17 @@ main {
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 15px;
-    color: grey;
+    color: #808080; /* Set text color to grey */
     text-transform: uppercase;
     padding: 1%;
-    /* text-align: center; */
 }
-
-/* .contact-in h2 i {
-	font-size: 16px;
-	width: 40px;
-	height: 40px;
-	margin-right: 10px;
-	background: #f5f5f5;
-	border-radius: 50px;
-	line-height: 40px;
-	text-align: center;
-} */
 
 .contact-in p {
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 20px;
     margin-left: 20px;
+    color: #000000; /* Set text color to black */
 }
 
 .contact-in ul {
@@ -120,7 +112,6 @@ main {
     margin-top: 100px;
 }
 
-
 .fa {
     display: inline-block;
     font-family: "Font Awesome 5 Free";
@@ -130,7 +121,6 @@ main {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 .fa-facebook:before {
     content: "\f09a";
 }
